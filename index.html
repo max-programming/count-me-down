@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Countdown Timer</h1>
+    </header>
+    <main>
+      <div class="inputs">
+        <form id="form">
+          <div class="nums">
+            <input
+              type="number"
+              id="hours-in"
+              placeholder="Hours"
+              min="0"
+              max="24"
+            />
+            <input
+              type="number"
+              id="minutes-in"
+              placeholder="Minutes"
+              min="0"
+              max="60"
+            />
+            <input
+              type="number"
+              id="seconds-in"
+              placeholder="Seconds"
+              min="0"
+              max="60"
+            />
+          </div>
+          <div class="btns">
+            <button type="submit" class="btn" id="start-btn">Start</button>
+            <button class="btn" id="stop-btn">Stop</button>
+          </div>
+        </form>
+      </div>
+      <div class="counts">
+        <h1 id="hours"></h1>
+        <h1 id="minutes"></h1>
+        <h1 id="seconds"></h1>
+      </div>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
