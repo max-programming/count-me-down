@@ -10,9 +10,9 @@ var startBtn = document.getElementById("start-btn");
 var stopBtn = document.getElementById("stop-btn");
 var setTextContent = function (el, txt) { return (el.textContent = txt); };
 var setAllTextContents = function () {
-    setTextContent(hoursDisplay, hours);
-    setTextContent(minutesDisplay, minutes);
-    setTextContent(secondsDisplay, seconds);
+    setTextContent(hoursDisplay, hours.toString());
+    setTextContent(minutesDisplay, minutes.toString());
+    setTextContent(secondsDisplay, seconds.toString());
 };
 setAllTextContents();
 formEl.onsubmit = function (e) {
@@ -35,19 +35,19 @@ formEl.onsubmit = function (e) {
             clearInterval(interval);
         else if (seconds !== 0) {
             seconds--;
-            setTextContent(secondsDisplay, seconds);
+            setTextContent(secondsDisplay, seconds.toString());
         }
         else if (seconds === 0 && minutes > 0) {
             seconds = 60;
             minutes--;
-            setTextContent(secondsDisplay, seconds);
-            setTextContent(minutesDisplay, minutes);
+            setTextContent(secondsDisplay, seconds.toString());
+            setTextContent(minutesDisplay, minutes.toString());
         }
         else if (minutes === 0 && hours > 0) {
             minutes = 60;
             hours--;
-            setTextContent(minutesDisplay, minutes);
-            setTextContent(hoursDisplay, hours);
+            setTextContent(minutesDisplay, minutes.toString());
+            setTextContent(hoursDisplay, hours.toString());
         }
     }, 1000);
     stopBtn.onclick = function () { return clearInterval(interval); };

@@ -11,11 +11,11 @@ const minutesDisplay = document.getElementById("minutes") as HTMLHeadingElement;
 const secondsDisplay = document.getElementById("seconds") as HTMLHeadingElement;
 const startBtn = document.getElementById("start-btn") as HTMLButtonElement;
 const stopBtn = document.getElementById("stop-btn") as HTMLButtonElement;
-const setTextContent = (el: HTMLElement, txt: any) => (el.textContent = txt);
+const setTextContent = (el: HTMLElement, txt: string) => (el.textContent = txt);
 const setAllTextContents = () => {
-  setTextContent(hoursDisplay, hours);
-  setTextContent(minutesDisplay, minutes);
-  setTextContent(secondsDisplay, seconds);
+  setTextContent(hoursDisplay, hours.toString());
+  setTextContent(minutesDisplay, minutes.toString());
+  setTextContent(secondsDisplay, seconds.toString());
 };
 
 setAllTextContents();
@@ -39,17 +39,17 @@ formEl.onsubmit = (e) => {
     if (hours === 0 && minutes === 0 && seconds === 0) clearInterval(interval);
     else if (seconds !== 0) {
       seconds--;
-      setTextContent(secondsDisplay, seconds);
+      setTextContent(secondsDisplay, seconds.toString());
     } else if (seconds === 0 && minutes > 0) {
       seconds = 60;
       minutes--;
-      setTextContent(secondsDisplay, seconds);
-      setTextContent(minutesDisplay, minutes);
+      setTextContent(secondsDisplay, seconds.toString());
+      setTextContent(minutesDisplay, minutes.toString());
     } else if (minutes === 0 && hours > 0) {
       minutes = 60;
       hours--;
-      setTextContent(minutesDisplay, minutes);
-      setTextContent(hoursDisplay, hours);
+      setTextContent(minutesDisplay, minutes.toString());
+      setTextContent(hoursDisplay, hours.toString());
     }
   }, 1000);
   stopBtn.onclick = () => clearInterval(interval);
