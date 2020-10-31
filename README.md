@@ -1,3 +1,3 @@
-# Countdown Timer
+# Count Me Down
 
-This is a super simple Countdown Timer built using HTML, CSS and TypeScript!
+A super simple **Countdown Timer** built using HTML, CSS and TypeScript.
